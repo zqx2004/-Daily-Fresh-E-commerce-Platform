@@ -1,0 +1,511 @@
+Watching for file changes with StatReloader
+Not Found: /
+"GET / HTTP/1.1" 404 2802
+Internal Server Error: /index/
+Traceback (most recent call last):
+  File "D:\ProgramData\anaconda3\envs\python_web\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\ProgramData\anaconda3\envs\python_web\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\env_space\ttsx\goods\views.py", line 86, in index
+    cag.goods_list = cag.goods.order_by("-id")[:4]
+AttributeError: 'GoodsCategory' object has no attribute 'goods'
+"GET /index/ HTTP/1.1" 500 70812
+Internal Server Error: /index/
+Traceback (most recent call last):
+  File "D:\ProgramData\anaconda3\envs\python_web\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\ProgramData\anaconda3\envs\python_web\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\env_space\ttsx\goods\views.py", line 86, in index
+    cag.goods_list = cag.goods.order_by("-id")[:4]
+AttributeError: 'GoodsCategory' object has no attribute 'goods'
+"GET /index/ HTTP/1.1" 500 70818
+D:\env_space\ttsx\goods\views.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /index/ HTTP/1.1" 200 10647
+Internal Server Error: /goods/
+Traceback (most recent call last):
+  File "D:\ProgramData\anaconda3\envs\python_web\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\ProgramData\anaconda3\envs\python_web\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\env_space\ttsx\goods\views.py", line 53, in goods_list
+    goods_queryset = GoodsInfo.objects.filter(category_id=cag_id)
+  File "D:\ProgramData\anaconda3\envs\python_web\lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "D:\ProgramData\anaconda3\envs\python_web\lib\site-packages\django\db\models\query.py", line 1436, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+  File "D:\ProgramData\anaconda3\envs\python_web\lib\site-packages\django\db\models\query.py", line 1454, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "D:\ProgramData\anaconda3\envs\python_web\lib\site-packages\django\db\models\query.py", line 1461, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "D:\ProgramData\anaconda3\envs\python_web\lib\site-packages\django\db\models\sql\query.py", line 1545, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "D:\ProgramData\anaconda3\envs\python_web\lib\site-packages\django\db\models\sql\query.py", line 1576, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "D:\ProgramData\anaconda3\envs\python_web\lib\site-packages\django\db\models\sql\query.py", line 1426, in build_filter
+    lookups, parts, reffed_expression = self.solve_lookup_type(arg, summarize)
+  File "D:\ProgramData\anaconda3\envs\python_web\lib\site-packages\django\db\models\sql\query.py", line 1236, in solve_lookup_type
+    _, field, _, lookup_parts = self.names_to_path(lookup_splitted, self.get_meta())
+  File "D:\ProgramData\anaconda3\envs\python_web\lib\site-packages\django\db\models\sql\query.py", line 1724, in names_to_path
+    raise FieldError(
+django.core.exceptions.FieldError: Cannot resolve keyword 'category_id' into field. Choices are: goods_cag, goods_cag_id, goods_desc, goods_img, goods_name, goods_price, id, ordergoods
+"GET /goods/?cag=3&page=1 HTTP/1.1" 500 117750
+"GET /index/ HTTP/1.1" 200 10647
+"GET /detail/?id=87 HTTP/1.1" 200 3205
+"GET /cart/add_cart/?id=87 HTTP/1.1" 302 0
+"GET /detail/?id=87 HTTP/1.1" 200 3372
+Internal Server Error: /cart/show_cart/
+Traceback (most recent call last):
+  File "D:\ProgramData\anaconda3\envs\python_web\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\ProgramData\anaconda3\envs\python_web\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\env_space\ttsx\cart\views.py", line 55, in show_cart
+    cart_money_total = sum(goods.price * goods.quantity for goods in cart_goods_list)
+  File "D:\env_space\ttsx\cart\views.py", line 55, in <genexpr>
+    cart_money_total = sum(goods.price * goods.quantity for goods in cart_goods_list)
+AttributeError: 'GoodsInfo' object has no attribute 'price'
+"GET /cart/show_cart/ HTTP/1.1" 500 75046
+Internal Server Error: /goods/
+Traceback (most recent call last):
+  File "D:\ProgramData\anaconda3\envs\python_web\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\ProgramData\anaconda3\envs\python_web\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\env_space\ttsx\goods\views.py", line 53, in goods_list
+    goods_queryset = GoodsInfo.objects.filter(category_id=cag_id)
+  File "D:\ProgramData\anaconda3\envs\python_web\lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "D:\ProgramData\anaconda3\envs\python_web\lib\site-packages\django\db\models\query.py", line 1436, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+  File "D:\ProgramData\anaconda3\envs\python_web\lib\site-packages\django\db\models\query.py", line 1454, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "D:\ProgramData\anaconda3\envs\python_web\lib\site-packages\django\db\models\query.py", line 1461, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "D:\ProgramData\anaconda3\envs\python_web\lib\site-packages\django\db\models\sql\query.py", line 1545, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "D:\ProgramData\anaconda3\envs\python_web\lib\site-packages\django\db\models\sql\query.py", line 1576, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "D:\ProgramData\anaconda3\envs\python_web\lib\site-packages\django\db\models\sql\query.py", line 1426, in build_filter
+    lookups, parts, reffed_expression = self.solve_lookup_type(arg, summarize)
+  File "D:\ProgramData\anaconda3\envs\python_web\lib\site-packages\django\db\models\sql\query.py", line 1236, in solve_lookup_type
+    _, field, _, lookup_parts = self.names_to_path(lookup_splitted, self.get_meta())
+  File "D:\ProgramData\anaconda3\envs\python_web\lib\site-packages\django\db\models\sql\query.py", line 1724, in names_to_path
+    raise FieldError(
+django.core.exceptions.FieldError: Cannot resolve keyword 'category_id' into field. Choices are: goods_cag, goods_cag_id, goods_desc, goods_img, goods_name, goods_price, id, ordergoods
+"GET /goods/?cag=1&page=1 HTTP/1.1" 500 117873
+D:\env_space\ttsx\goods\views.py changed, reloading.
+Watching for file changes with StatReloader
+Not Found: /
+"GET / HTTP/1.1" 404 2802
+Internal Server Error: /goods/
+Traceback (most recent call last):
+  File "D:\ProgramData\anaconda3\envs\python_web\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\ProgramData\anaconda3\envs\python_web\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\env_space\ttsx\goods\views.py", line 58, in goods_list
+    paginator = Paginator(goods_queryset, 12)
+UnboundLocalError: local variable 'goods_queryset' referenced before assignment
+"GET /goods/?cag=1&page=1 HTTP/1.1" 500 72516
+Internal Server Error: /goods/
+Traceback (most recent call last):
+  File "D:\ProgramData\anaconda3\envs\python_web\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\ProgramData\anaconda3\envs\python_web\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\env_space\ttsx\goods\views.py", line 58, in goods_list
+    paginator = Paginator(goods_queryset, 12)
+UnboundLocalError: local variable 'goods_queryset' referenced before assignment
+"GET /goods/?cag=1&page=1 HTTP/1.1" 500 72228
+D:\env_space\ttsx\goods\views.py changed, reloading.
+Watching for file changes with StatReloader
+Internal Server Error: /goods/
+Traceback (most recent call last):
+  File "D:\ProgramData\anaconda3\envs\python_web\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\ProgramData\anaconda3\envs\python_web\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\env_space\ttsx\goods\views.py", line 55, in goods_list
+    return render(request, 'list.html', {
+  File "D:\ProgramData\anaconda3\envs\python_web\lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "D:\ProgramData\anaconda3\envs\python_web\lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "D:\ProgramData\anaconda3\envs\python_web\lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: list.html
+"GET /goods/?cag=1&page=1 HTTP/1.1" 500 87901
+"GET /index/ HTTP/1.1" 200 10814
+Internal Server Error: /goods/
+Traceback (most recent call last):
+  File "D:\ProgramData\anaconda3\envs\python_web\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\ProgramData\anaconda3\envs\python_web\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\env_space\ttsx\goods\views.py", line 55, in goods_list
+    return render(request, 'list.html', {
+  File "D:\ProgramData\anaconda3\envs\python_web\lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "D:\ProgramData\anaconda3\envs\python_web\lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "D:\ProgramData\anaconda3\envs\python_web\lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: list.html
+"GET /goods/?cag=1&page=1 HTTP/1.1" 500 87915
+Internal Server Error: /goods/
+Traceback (most recent call last):
+  File "D:\ProgramData\anaconda3\envs\python_web\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\ProgramData\anaconda3\envs\python_web\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\env_space\ttsx\goods\views.py", line 55, in goods_list
+    return render(request, 'list.html', {
+  File "D:\ProgramData\anaconda3\envs\python_web\lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "D:\ProgramData\anaconda3\envs\python_web\lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "D:\ProgramData\anaconda3\envs\python_web\lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: list.html
+"GET /goods/?cag=5&page=1 HTTP/1.1" 500 87550
+"GET /detail/?id=87 HTTP/1.1" 200 3372
+"GET /cart/add_cart/?id=87 HTTP/1.1" 302 0
+"GET /detail/?id=87 HTTP/1.1" 200 3372
+Internal Server Error: /cart/show_cart/
+Traceback (most recent call last):
+  File "D:\ProgramData\anaconda3\envs\python_web\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\ProgramData\anaconda3\envs\python_web\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\env_space\ttsx\cart\views.py", line 55, in show_cart
+    cart_money_total = sum(goods.price * goods.quantity for goods in cart_goods_list)
+  File "D:\env_space\ttsx\cart\views.py", line 55, in <genexpr>
+    cart_money_total = sum(goods.price * goods.quantity for goods in cart_goods_list)
+AttributeError: 'GoodsInfo' object has no attribute 'price'
+"GET /cart/show_cart/ HTTP/1.1" 500 75046
+D:\env_space\ttsx\cart\views.py changed, reloading.
+Watching for file changes with StatReloader
+Internal Server Error: /goods/
+Traceback (most recent call last):
+  File "D:\ProgramData\anaconda3\envs\python_web\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\ProgramData\anaconda3\envs\python_web\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\env_space\ttsx\goods\views.py", line 55, in goods_list
+    return render(request, 'list.html', {
+  File "D:\ProgramData\anaconda3\envs\python_web\lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "D:\ProgramData\anaconda3\envs\python_web\lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "D:\ProgramData\anaconda3\envs\python_web\lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: list.html
+"GET /goods/?cag=1&page=1 HTTP/1.1" 500 87901
+Internal Server Error: /cart/show_cart/
+Traceback (most recent call last):
+  File "D:\ProgramData\anaconda3\envs\python_web\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\ProgramData\anaconda3\envs\python_web\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\env_space\ttsx\cart\views.py", line 50, in show_cart
+    cart_dict = cart_info['cart_dict']
+KeyError: 'cart_dict'
+"GET /cart/show_cart/ HTTP/1.1" 500 70626
+Internal Server Error: /cart/show_cart/
+Traceback (most recent call last):
+  File "D:\ProgramData\anaconda3\envs\python_web\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\ProgramData\anaconda3\envs\python_web\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\env_space\ttsx\cart\views.py", line 50, in show_cart
+    cart_dict = cart_info['cart_dict']
+KeyError: 'cart_dict'
+"GET /cart/show_cart/ HTTP/1.1" 500 70331
+D:\env_space\ttsx\cart\views.py changed, reloading.
+Watching for file changes with StatReloader
+Not Found: /
+"GET / HTTP/1.1" 404 2802
+"GET /cart/show_cart/ HTTP/1.1" 200 1586
+Not Found: /
+"GET / HTTP/1.1" 404 2802
+"GET /index/ HTTP/1.1" 200 10814
+"GET /detail/?id=87 HTTP/1.1" 200 3372
+"GET /cart/add_cart/?id=87 HTTP/1.1" 302 0
+"GET /detail/?id=87 HTTP/1.1" 200 3372
+"GET /cart/show_cart/ HTTP/1.1" 200 1586
+"GET /cart/show_cart/ HTTP/1.1" 200 1586
+D:\env_space\ttsx\goods\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\env_space\ttsx\cart\views.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /cart/show_cart/ HTTP/1.1" 200 1974
+"GET /cart/add_cart/?id=87 HTTP/1.1" 302 0
+"GET /detail/?id=87 HTTP/1.1" 200 3204
+"GET /cart/show_cart/ HTTP/1.1" 200 1976
+"GET /cart/remove_cart/?id=87 HTTP/1.1" 302 0
+"GET /cart/show_cart/ HTTP/1.1" 200 1709
+Internal Server Error: /goods/
+Traceback (most recent call last):
+  File "D:\ProgramData\anaconda3\envs\python_web\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\ProgramData\anaconda3\envs\python_web\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\env_space\ttsx\goods\views.py", line 51, in goods_list
+    return render(request, 'list.html', {
+  File "D:\ProgramData\anaconda3\envs\python_web\lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "D:\ProgramData\anaconda3\envs\python_web\lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "D:\ProgramData\anaconda3\envs\python_web\lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: list.html
+"GET /goods/?cag=1&page=1 HTTP/1.1" 500 87858
+Not Found: /
+"GET / HTTP/1.1" 404 2802
+Not Found: /indx/
+"GET /indx/ HTTP/1.1" 404 2835
+"GET /index/ HTTP/1.1" 200 10646
+"GET /detail/?id=88 HTTP/1.1" 200 3149
+"GET /cart/add_cart/?id=88 HTTP/1.1" 302 0
+"GET /detail/?id=88 HTTP/1.1" 200 3149
+"GET /cart/show_cart/ HTTP/1.1" 200 1955
+Internal Server Error: /cart/place_order/
+Traceback (most recent call last):
+  File "D:\ProgramData\anaconda3\envs\python_web\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\ProgramData\anaconda3\envs\python_web\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\env_space\ttsx\cart\views.py", line 109, in place_order
+    return render(request, "order.html", cart_info)
+  File "D:\ProgramData\anaconda3\envs\python_web\lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "D:\ProgramData\anaconda3\envs\python_web\lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "D:\ProgramData\anaconda3\envs\python_web\lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: order.html
+"GET /cart/place_order/ HTTP/1.1" 500 85546
+"GET /index/ HTTP/1.1" 200 10646
+Internal Server Error: /goods/
+Traceback (most recent call last):
+  File "D:\ProgramData\anaconda3\envs\python_web\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\ProgramData\anaconda3\envs\python_web\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\env_space\ttsx\goods\views.py", line 51, in goods_list
+    return render(request, 'list.html', {
+  File "D:\ProgramData\anaconda3\envs\python_web\lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "D:\ProgramData\anaconda3\envs\python_web\lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "D:\ProgramData\anaconda3\envs\python_web\lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: list.html
+"GET /goods/?cag=1&page=1 HTTP/1.1" 500 88042
+Watching for file changes with StatReloader
+Not Found: /
+"GET / HTTP/1.1" 404 2802
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 2853
+Not Found: /
+"GET / HTTP/1.1" 404 2802
+"GET /admin/ HTTP/1.1" 302 0
+"GET /admin/login/?next=/admin/ HTTP/1.1" 200 4195
+"GET /static/admin/css/dark_mode.css HTTP/1.1" 200 2929
+"GET /static/admin/css/nav_sidebar.css HTTP/1.1" 200 2694
+"GET /static/admin/css/base.css HTTP/1.1" 200 21207
+"GET /static/admin/css/login.css HTTP/1.1" 200 958
+"GET /static/admin/js/theme.js HTTP/1.1" 200 1943
+"GET /static/admin/css/responsive.css HTTP/1.1" 200 18533
+"GET /static/admin/js/nav_sidebar.js HTTP/1.1" 200 3063
+Not Found: /
+"GET / HTTP/1.1" 404 2802
+"GET /index HTTP/1.1" 301 0
+"GET /index/ HTTP/1.1" 200 10646
+"GET /static/css/reset.css HTTP/1.1" 200 664
+"GET /static/js/slide.js HTTP/1.1" 200 2473
+"GET /static/css/main.css HTTP/1.1" 200 23600
+"GET /static/images/logo.png HTTP/1.1" 200 9987
+"GET /static/js/jquery-ui.min.js HTTP/1.1" 200 70994
+"GET /static/images/slide.jpg HTTP/1.1" 200 43271
+"GET /static/js/jquery-1.12.4.min.js HTTP/1.1" 200 97163
+"GET /static/images/slide02.jpg HTTP/1.1" 200 46855
+"GET /static/images/slide04.jpg HTTP/1.1" 200 62570
+"GET /static/images/slide03.jpg HTTP/1.1" 200 70593
+"GET /static/images/adv01.jpg HTTP/1.1" 200 13988
+"GET /static/images/adv02.jpg HTTP/1.1" 200 15859
+"GET /static/images/banner01.jpg HTTP/1.1" 200 9919
+"GET /static/goods/15180585503483992.jpg HTTP/1.1" 200 7318
+"GET /static/goods/1518058550346399.jpg HTTP/1.1" 200 6966
+"GET /static/goods/15180585503453991.jpg HTTP/1.1" 200 10561
+"GET /static/images/banner02.jpg HTTP/1.1" 200 18351
+"GET /static/goods/15180585610390108.jpg HTTP/1.1" 200 11491
+"GET /static/goods/15180585503443992.jpg HTTP/1.1" 200 8426
+"GET /static/goods/15180585610370107.jpg HTTP/1.1" 200 10034
+"GET /static/goods/15180585610380106.jpg HTTP/1.1" 200 14034
+"GET /static/goods/15180585610360105.jpg HTTP/1.1" 200 8996
+"GET /static/images/banner03.jpg HTTP/1.1" 200 13013
+"GET /static/images/banner04.jpg HTTP/1.1" 200 10823
+"GET /static/goods/15180585917887695.jpg HTTP/1.1" 200 9763
+"GET /static/goods/15180585917897696.jpg HTTP/1.1" 200 8464
+"GET /static/goods/15180585917907696.jpg HTTP/1.1" 200 9300
+"GET /static/goods/15180586096397905.jpg HTTP/1.1" 200 6810
+"GET /static/images/icons.png HTTP/1.1" 200 5931
+"GET /static/goods/15180586097137947.jpg HTTP/1.1" 200 6710
+"GET /static/images/banner05.jpg HTTP/1.1" 200 16081
+"GET /static/goods/1518058609643791.jpg HTTP/1.1" 200 5282
+"GET /static/goods/15180586096427906.jpg HTTP/1.1" 200 6513
+"GET /static/goods/15178247177723997.jpg HTTP/1.1" 200 12254
+"GET /static/goods/15178247177713995.jpg HTTP/1.1" 200 12767
+"GET /static/goods/15178247177703996.jpg HTTP/1.1" 200 7251
+"GET /static/images/banner06.jpg HTTP/1.1" 200 14257
+"GET /static/goods/15178247177693994.jpg HTTP/1.1" 200 11031
+"GET /static/goods/1518058619019327.jpg HTTP/1.1" 200 8793
+"GET /static/goods/15180586190173268.jpg HTTP/1.1" 200 9124
+"GET /static/goods/15180586190133266.jpg HTTP/1.1" 200 12905
+"GET /static/goods/15180586190183268.jpg HTTP/1.1" 200 7833
+"GET /detail/?id=215 HTTP/1.1" 200 3145
+"GET /static/images/down.png HTTP/1.1" 200 1064
+"GET /cart/add_cart/?id=215 HTTP/1.1" 302 0
+"GET /detail/?id=215 HTTP/1.1" 200 3145
+"GET /cart/show_cart/ HTTP/1.1" 200 2325
+Internal Server Error: /cart/place_order/
+Traceback (most recent call last):
+  File "D:\ProgramData\anaconda3\envs\python_web\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\ProgramData\anaconda3\envs\python_web\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\env_space\ttsx\cart\views.py", line 109, in place_order
+    return render(request, "order.html", cart_info)
+  File "D:\ProgramData\anaconda3\envs\python_web\lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "D:\ProgramData\anaconda3\envs\python_web\lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "D:\ProgramData\anaconda3\envs\python_web\lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: order.html
+"GET /cart/place_order/ HTTP/1.1" 500 85620
+Watching for file changes with StatReloader
+Not Found: /
+"GET / HTTP/1.1" 404 2802
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 2853
+"GET /index HTTP/1.1" 301 0
+"GET /index/ HTTP/1.1" 200 10646
+"GET /static/css/reset.css HTTP/1.1" 200 664
+"GET /static/css/main.css HTTP/1.1" 200 23600
+"GET /static/js/slide.js HTTP/1.1" 200 2473
+"GET /static/images/logo.png HTTP/1.1" 200 9987
+"GET /static/js/jquery-ui.min.js HTTP/1.1" 200 70994
+"GET /static/js/jquery-1.12.4.min.js HTTP/1.1" 200 97163
+"GET /static/images/slide.jpg HTTP/1.1" 200 43271
+"GET /static/images/slide02.jpg HTTP/1.1" 200 46855
+"GET /static/images/slide03.jpg HTTP/1.1" 200 70593
+"GET /static/images/adv01.jpg HTTP/1.1" 200 13988
+"GET /static/images/slide04.jpg HTTP/1.1" 200 62570
+"GET /static/images/banner01.jpg HTTP/1.1" 200 9919
+"GET /static/images/adv02.jpg HTTP/1.1" 200 15859
+"GET /static/goods/1518058550346399.jpg HTTP/1.1" 200 6966
+"GET /static/goods/15180585503483992.jpg HTTP/1.1" 200 7318
+"GET /static/goods/15180585503453991.jpg HTTP/1.1" 200 10561
+"GET /static/goods/15180585503443992.jpg HTTP/1.1" 200 8426
+"GET /static/images/banner02.jpg HTTP/1.1" 200 18351
+"GET /static/goods/15180585610390108.jpg HTTP/1.1" 200 11491
+"GET /static/goods/15180585610370107.jpg HTTP/1.1" 200 10034
+"GET /static/images/banner03.jpg HTTP/1.1" 200 13013
+"GET /static/goods/15180585610360105.jpg HTTP/1.1" 200 8996
+"GET /static/goods/15180585610380106.jpg HTTP/1.1" 200 14034
+"GET /static/goods/15180585917907696.jpg HTTP/1.1" 200 9300
+"GET /static/goods/15180585917897696.jpg HTTP/1.1" 200 8464
+"GET /static/goods/1518058609643791.jpg HTTP/1.1" 200 5282
+"GET /static/goods/15180585917887695.jpg HTTP/1.1" 200 9763
+"GET /static/images/banner04.jpg HTTP/1.1" 200 10823
+"GET /static/goods/15180586096397905.jpg HTTP/1.1" 200 6810
+"GET /static/images/banner05.jpg HTTP/1.1" 200 16081
+"GET /static/goods/15180586096427906.jpg HTTP/1.1" 200 6513
+"GET /static/goods/15180586097137947.jpg HTTP/1.1" 200 6710
+"GET /static/goods/15178247177723997.jpg HTTP/1.1" 200 12254
+"GET /static/goods/15178247177713995.jpg HTTP/1.1" 200 12767
+"GET /static/goods/15178247177703996.jpg HTTP/1.1" 200 7251
+"GET /static/goods/15178247177693994.jpg HTTP/1.1" 200 11031
+"GET /static/images/icons.png HTTP/1.1" 200 5931
+"GET /static/images/banner06.jpg HTTP/1.1" 200 14257
+"GET /static/goods/1518058619019327.jpg HTTP/1.1" 200 8793
+"GET /static/goods/15180586190173268.jpg HTTP/1.1" 200 9124
+"GET /static/goods/15180586190133266.jpg HTTP/1.1" 200 12905
+"GET /static/goods/15180586190183268.jpg HTTP/1.1" 200 7833
+Internal Server Error: /goods/
+Traceback (most recent call last):
+  File "D:\ProgramData\anaconda3\envs\python_web\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\ProgramData\anaconda3\envs\python_web\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\env_space\ttsx\goods\views.py", line 51, in goods_list
+    return render(request, 'list.html', {
+  File "D:\ProgramData\anaconda3\envs\python_web\lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "D:\ProgramData\anaconda3\envs\python_web\lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "D:\ProgramData\anaconda3\envs\python_web\lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: list.html
+"GET /goods/?cag=1&page=1 HTTP/1.1" 500 88116
+"GET /detail/?id=410 HTTP/1.1" 200 3214
+"GET /static/images/down.png HTTP/1.1" 200 1064
+"GET /cart/add_cart/?id=410 HTTP/1.1" 302 0
+"GET /detail/?id=410 HTTP/1.1" 200 3214
+"GET /cart/show_cart/ HTTP/1.1" 200 2717
+"GET /cart/remove_cart/?id=410 HTTP/1.1" 302 0
+"GET /cart/show_cart/ HTTP/1.1" 200 2325
+"GET /cart/remove_cart/?id=88 HTTP/1.1" 302 0
+"GET /cart/show_cart/ HTTP/1.1" 200 1955
+Internal Server Error: /cart/place_order/
+Traceback (most recent call last):
+  File "D:\ProgramData\anaconda3\envs\python_web\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\ProgramData\anaconda3\envs\python_web\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\env_space\ttsx\cart\views.py", line 109, in place_order
+    return render(request, "order.html", cart_info)
+  File "D:\ProgramData\anaconda3\envs\python_web\lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "D:\ProgramData\anaconda3\envs\python_web\lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "D:\ProgramData\anaconda3\envs\python_web\lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: order.html
+"GET /cart/place_order/ HTTP/1.1" 500 85421
+Internal Server Error: /goods/
+Traceback (most recent call last):
+  File "D:\ProgramData\anaconda3\envs\python_web\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\ProgramData\anaconda3\envs\python_web\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\env_space\ttsx\goods\views.py", line 51, in goods_list
+    return render(request, 'list.html', {
+  File "D:\ProgramData\anaconda3\envs\python_web\lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "D:\ProgramData\anaconda3\envs\python_web\lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "D:\ProgramData\anaconda3\envs\python_web\lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: list.html
+"GET /goods/?cag=6&page=1 HTTP/1.1" 500 87946
+D:\env_space\ttsx\goods\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\env_space\ttsx\goods\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\env_space\ttsx\goods\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\env_space\ttsx\goods\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\env_space\ttsx\cart\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\env_space\ttsx\cart\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\env_space\ttsx\ttsx\urls.py changed, reloading.
+Watching for file changes with StatReloader
+D:\env_space\ttsx\ttsx\urls.py changed, reloading.
