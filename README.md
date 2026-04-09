@@ -52,12 +52,4 @@ ttsx/
 
 ## 作者
 GitHub: [zqx2004](sslocal://flow/file_open?url=https%3A%2F%2Fgithub.com%2Fzqx2004&flow_extra=eyJsaW5rX3R5cGUiOiJjb2RlX2ludGVycHJldGVyIn0=)
-```
 
----
-
-```bash
-git add README.md
-git commit -m "add README.md"
-git push
-```
