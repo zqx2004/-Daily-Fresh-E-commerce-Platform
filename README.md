@@ -56,7 +56,6 @@ GitHub: [zqx2004](sslocal://flow/file_open?url=https%3A%2F%2Fgithub.com%2Fzqx200
 
 ---
 
-### 3. 提交到 GitHub（复制运行）
 ```bash
 git add README.md
 git commit -m "add README.md"
